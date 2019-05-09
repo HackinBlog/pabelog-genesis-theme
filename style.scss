@@ -1,0 +1,386 @@
+/*
+Theme Name: Pabelog
+Theme URI: https://www.pabelog.com/
+Description: A theme used on pabelog.com.
+Author: Nadiar AS
+Author URI: https://www.nadiar.id/
+Version: 2.10.0
+Template: genesis
+License: MIT
+Text Domain: pabelog
+*/
+
+// String replace
+// ============== 
+@function str-replace($string, $search, $replace: "") {
+	$index: str-index($string, $search);
+
+	@if $index {
+		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+	}
+
+	@return $string;
+}
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+	$src: null;
+
+	$extmods: (
+		eot: "?",
+		svg: "#" + str-replace($name, " ", "_")
+	);
+
+	$formats: (
+		otf: "opentype",
+		ttf: "truetype"
+  );
+  
+	@each $ext in $exts {
+		$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+		$src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+	}
+
+	@font-face {
+		font-family: quote($name);
+		src: $src;
+		font-weight: $weight;
+		font-style: $style;
+	}
+}
+
+$font1: Roboto;
+$font2: 'Noto_Sans';
+$font-size1: 20px;
+$line-height1: 34px;
+$font-color1: #111;
+$font-color2: #999;
+$font-color3: #ff0000;
+$font-color-link: $font-color3;
+$bg-color1: #fff;
+$bg-color2: #111;
+$bg-color3: #999;
+$border-color1: #eee;
+$border-color2: #ddd;
+
+$color-note: #ccf1ff;
+$color-box: #cce8cc;;
+$color-alert: #ffe91f;
+$note-box-alert-padding: 21px;
+
+// @include font-face(Roboto, assets/fonts/Roboto/Roboto-Regular, normal, normal, ttf);
+// @include font-face(Roboto, assets/fonts/Roboto/Roboto-Italic, normal, italic, ttf);
+// @include font-face(Roboto, assets/fonts/Roboto/Roboto-Bold, bold, normal, ttf);
+// @include font-face(Roboto, assets/fonts/Roboto/Roboto-BoldItalic, bold, italic, ttf);
+// @include font-face(Roboto, assets/fonts/Roboto/Roboto-Medium, 500, normal, ttf);
+// @include font-face(Roboto, assets/fonts/Roboto/Roboto-MediumItalic, 500, italic, ttf);
+// @include font-face(Roboto, assets/fonts/Roboto/Roboto-Black, 900, normal, ttf);
+// @include font-face(Roboto, assets/fonts/Roboto/Roboto-BlackItalic, 900, italic, ttf);
+
+@include font-face('Noto Sans', assets/fonts/Noto_Sans/NotoSans-Regular, normal, normal, ttf);
+@include font-face('Noto Sans', assets/fonts/Noto_Sans/NotoSans-Italic, normal, italic, ttf);
+@include font-face('Noto Sans', assets/fonts/Noto_Sans/NotoSans-Bold, bold, normal, ttf);
+@include font-face('Noto Sans', assets/fonts/Noto_Sans/NotoSans-BoldItalic, bold, italic, ttf);
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans', Roboto, "Segoe UI", Segoe, "Helvetica Neue", Tahoma, sans-serif;
+  font-size: $font-size1;
+  line-height: $line-height1;
+  color: $font-color1;
+  background-color: $bg-color1;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+a, a:visited {
+	color: $font-color-link;
+}
+
+a:hover {
+	text-decoration: none;
+	color: $font-color3;
+}
+
+.font-color2 {
+	color: $font-color2;
+}
+
+ul {
+	list-style-type: square;
+}
+
+/* WordPress
+--------------------------------------------- */
+
+a.aligncenter img {
+	display: block;
+	margin: 0 auto;
+}
+
+a.alignnone {
+	display: inline-block;
+}
+
+.alignleft {
+	float: left;
+	text-align: left;
+}
+
+.alignright {
+	float: right;
+	text-align: right;
+}
+
+a.alignleft,
+a.alignnone,
+a.alignright {
+	max-width: 100%;
+}
+
+img.centered,
+.aligncenter {
+	display: block;
+	margin: 0 auto 30px;
+}
+
+img.alignnone,
+.alignnone {
+	margin-bottom: 15px;
+}
+
+a.alignleft,
+img.alignleft,
+.wp-caption.alignleft {
+	margin: 0 20px 20px 0;
+}
+
+a.alignright,
+img.alignright,
+.wp-caption.alignright {
+	margin: 0 0 20px 20px;
+}
+
+.gallery-caption,
+.wp-caption-text {
+	font-size: 14px;
+	font-weight: 600;
+	margin: 0;
+	text-align: center;
+}
+
+.entry-content p.wp-caption-text {
+	margin-bottom: 0;
+}
+
+.entry-content .wp-audio-shortcode,
+.entry-content .wp-playlist,
+.entry-content .wp-video {
+	margin: 0 0 30px;
+}
+
+.size-auto, 
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+	max-width: 100%;
+	height: auto;
+	border: 1px solid $border-color1;
+}
+
+/* Legacy
+--------------------------------------------- */
+
+.entry-content .drop_cap {
+	font-size: 100px;
+	line-height: 1em;
+	margin-right: 22px;
+	float: left;
+} 
+
+.entry-content .alert, .entry-content .note, .entry-content .box {
+	padding: $note-box-alert-padding;
+}
+
+.entry-content .alert {
+	background-color: $color-alert;
+}
+
+.entry-content .note {
+	background-color: $color-note;
+}
+
+.entry-content .box {
+	background-color: $color-alert;
+}
+
+.entry-content .footnotes, .entry-content code, .entry-content pre, .entry-content kbd  {
+	font-size: 18px;
+	line-height: 36px;
+}
+.entry-content .footnotes {
+	padding-top: 10px;
+	border-top: 1px dotted #dddddd;
+	color: $font-color2;
+}
+
+.entry-content code {
+	background-color: rgba(0, 0, 0, 0.08);
+	padding: 4px 5px;
+	border-radius: 7px;
+	margin: 0 1px;
+}
+
+.entry-content pre {
+	background-color: #eeeeee;
+	padding: 21px;
+	display: block;
+	overflow: auto;
+	clear: both;
+}
+
+.entry-content kbd {
+	color: #111111;
+	background-color: white;
+	padding: 4px 5px;
+	border-radius: 7px;
+	box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.45);
+	margin: 0 1px;
+}
+
+.entry-content blockquote {
+	color: #828282;
+	padding-left: 19px;
+	border-left: 7px solid rgba(0, 0, 0, 0.1);
+}
+
+.entry-content .toc_wrap {
+	display: none;
+}
+
+/* Genesis
+--------------------------------------------- */
+
+.pagination {
+	margin-top: 50px;
+}
+
+.pagination ul {
+	list-style: none;
+	text-align: center;
+	padding: 0;
+}
+
+.pagination ul > li {
+	display: inline;
+	margin: 10px;
+}
+
+.pagination ul > li > a {
+	text-decoration: none;
+}
+
+.pagination ul > li > a:hover, .pagination ul > li.active a {
+	text-decoration: underline;
+	color: $font-color3;
+}
+
+/* ## Avatar
+--------------------------------------------- */
+
+.avatar {
+	float: left;
+}
+
+.alignleft .avatar,
+.author-box .avatar {
+	margin-right: 24px;
+}
+
+.alignright .avatar {
+	margin-left: 24px;
+}
+
+.comment .avatar {
+	margin: 0 16px 24px 0;
+}
+
+/* ## Comments
+--------------------------------------------- */
+
+#comments ol, #comments ul {
+	padding: 0;
+}
+
+.comment-respond,
+.entry-comments,
+.entry-pings {
+	margin-bottom: 60px;
+}
+
+.comment-header img.avatar {
+	float: right;
+}
+
+.comment-content {
+	clear: both;
+	word-wrap: break-word;
+}
+
+.comment-list li {
+	padding: 32px 0 0 32px;
+	list-style: none;
+}
+
+.comment-list li.depth-1 {
+	padding-left: 0;
+}
+
+.comment-respond input[type="email"],
+.comment-respond input[type="text"],
+.comment-respond input[type="url"] {
+	width: 50%;
+}
+
+.comment-respond label {
+	display: block;
+	margin-right: 12px;
+}
+
+.entry-comments .comment-author {
+	margin-bottom: 0;
+}
+
+.entry-pings .reply {
+	display: none;
+}
+
+.comment-respond textarea#comment, 
+.comment-respond input#submit,
+.comment-respond input[type=email],
+.comment-respond input[type=text],
+.comment-respond input[type=url] {
+	border: 1px solid $border-color2;
+	padding: 13px;
+}
+
+.comment-respond textarea#comment {
+	width: 600px;
+	height: 300px;
+}
+
+.comment-respond input[type=email],
+.comment-respond input[type=text],
+.comment-respond input[type=url] {
+	max-width: 320px;
+}
+
+.comment-respond input#submit {
+	margin-top: 20px;
+	cursor: pointer;
+}

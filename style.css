@@ -1,0 +1,335 @@
+/*
+Theme Name: Pabelog
+Theme URI: https://www.pabelog.com/
+Description: A theme used on pabelog.com.
+Author: Nadiar AS
+Author URI: https://www.nadiar.id/
+Version: 2.10.0
+Template: genesis
+License: MIT
+Text Domain: pabelog
+*/
+@font-face {
+  font-family: "Noto Sans";
+  src: url("assets/fonts/Noto_Sans/NotoSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Noto Sans";
+  src: url("assets/fonts/Noto_Sans/NotoSans-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Noto Sans";
+  src: url("assets/fonts/Noto_Sans/NotoSans-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Noto Sans";
+  src: url("assets/fonts/Noto_Sans/NotoSans-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Noto Sans", Roboto, "Segoe UI", Segoe, "Helvetica Neue", Tahoma, sans-serif;
+  font-size: 20px;
+  line-height: 34px;
+  color: #111;
+  background-color: #fff;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+a, a:visited {
+  color: #ff0000;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #ff0000;
+}
+
+.font-color2 {
+  color: #999;
+}
+
+ul {
+  list-style-type: square;
+}
+
+/* WordPress
+--------------------------------------------- */
+a.aligncenter img {
+  display: block;
+  margin: 0 auto;
+}
+
+a.alignnone {
+  display: inline-block;
+}
+
+.alignleft {
+  float: left;
+  text-align: left;
+}
+
+.alignright {
+  float: right;
+  text-align: right;
+}
+
+a.alignleft,
+a.alignnone,
+a.alignright {
+  max-width: 100%;
+}
+
+img.centered,
+.aligncenter {
+  display: block;
+  margin: 0 auto 30px;
+}
+
+img.alignnone,
+.alignnone {
+  margin-bottom: 15px;
+}
+
+a.alignleft,
+img.alignleft,
+.wp-caption.alignleft {
+  margin: 0 20px 20px 0;
+}
+
+a.alignright,
+img.alignright,
+.wp-caption.alignright {
+  margin: 0 0 20px 20px;
+}
+
+.gallery-caption,
+.wp-caption-text {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+}
+
+.entry-content p.wp-caption-text {
+  margin-bottom: 0;
+}
+
+.entry-content .wp-audio-shortcode,
+.entry-content .wp-playlist,
+.entry-content .wp-video {
+  margin: 0 0 30px;
+}
+
+.size-auto,
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #eee;
+}
+
+/* Legacy
+--------------------------------------------- */
+.entry-content .drop_cap {
+  font-size: 100px;
+  line-height: 1em;
+  margin-right: 22px;
+  float: left;
+}
+
+.entry-content .alert, .entry-content .note, .entry-content .box {
+  padding: 21px;
+}
+
+.entry-content .alert {
+  background-color: #ffe91f;
+}
+
+.entry-content .note {
+  background-color: #ccf1ff;
+}
+
+.entry-content .box {
+  background-color: #ffe91f;
+}
+
+.entry-content .footnotes, .entry-content code, .entry-content pre, .entry-content kbd {
+  font-size: 18px;
+  line-height: 36px;
+}
+
+.entry-content .footnotes {
+  padding-top: 10px;
+  border-top: 1px dotted #dddddd;
+  color: #999;
+}
+
+.entry-content code {
+  background-color: rgba(0, 0, 0, 0.08);
+  padding: 4px 5px;
+  border-radius: 7px;
+  margin: 0 1px;
+}
+
+.entry-content pre {
+  background-color: #eeeeee;
+  padding: 21px;
+  display: block;
+  overflow: auto;
+  clear: both;
+}
+
+.entry-content kbd {
+  color: #111111;
+  background-color: white;
+  padding: 4px 5px;
+  border-radius: 7px;
+  box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.45);
+  margin: 0 1px;
+}
+
+.entry-content blockquote {
+  color: #828282;
+  padding-left: 19px;
+  border-left: 7px solid rgba(0, 0, 0, 0.1);
+}
+
+.entry-content .toc_wrap {
+  display: none;
+}
+
+/* Genesis
+--------------------------------------------- */
+.pagination {
+  margin-top: 50px;
+}
+
+.pagination ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+}
+
+.pagination ul > li {
+  display: inline;
+  margin: 10px;
+}
+
+.pagination ul > li > a {
+  text-decoration: none;
+}
+
+.pagination ul > li > a:hover, .pagination ul > li.active a {
+  text-decoration: underline;
+  color: #ff0000;
+}
+
+/* ## Avatar
+--------------------------------------------- */
+.avatar {
+  float: left;
+}
+
+.alignleft .avatar,
+.author-box .avatar {
+  margin-right: 24px;
+}
+
+.alignright .avatar {
+  margin-left: 24px;
+}
+
+.comment .avatar {
+  margin: 0 16px 24px 0;
+}
+
+/* ## Comments
+--------------------------------------------- */
+#comments ol, #comments ul {
+  padding: 0;
+}
+
+.comment-respond,
+.entry-comments,
+.entry-pings {
+  margin-bottom: 60px;
+}
+
+.comment-header img.avatar {
+  float: right;
+}
+
+.comment-content {
+  clear: both;
+  word-wrap: break-word;
+}
+
+.comment-list li {
+  padding: 32px 0 0 32px;
+  list-style: none;
+}
+
+.comment-list li.depth-1 {
+  padding-left: 0;
+}
+
+.comment-respond input[type=email],
+.comment-respond input[type=text],
+.comment-respond input[type=url] {
+  width: 50%;
+}
+
+.comment-respond label {
+  display: block;
+  margin-right: 12px;
+}
+
+.entry-comments .comment-author {
+  margin-bottom: 0;
+}
+
+.entry-pings .reply {
+  display: none;
+}
+
+.comment-respond textarea#comment,
+.comment-respond input#submit,
+.comment-respond input[type=email],
+.comment-respond input[type=text],
+.comment-respond input[type=url] {
+  border: 1px solid #ddd;
+  padding: 13px;
+}
+
+.comment-respond textarea#comment {
+  width: 600px;
+  height: 300px;
+}
+
+.comment-respond input[type=email],
+.comment-respond input[type=text],
+.comment-respond input[type=url] {
+  max-width: 320px;
+}
+
+.comment-respond input#submit {
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=style.css.map */

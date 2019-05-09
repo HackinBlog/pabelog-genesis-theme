@@ -1,0 +1,14 @@
+{
+  "name": "pabelog-assets",
+  "version": "0.0.1",
+  "description": "assets used on pabelog theme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nadiar AS",
+  "license": "MIT",
+  "dependencies": {
+    "tachyons": "^4.11.1"
+  }
+}
