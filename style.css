@@ -143,6 +143,11 @@ img.alignright,
   border: 1px solid #eee;
 }
 
+@media only screen and (max-width: 600px) {
+  .entry-content figure {
+    width: auto !important;
+  }
+}
 /* Legacy
 --------------------------------------------- */
 .entry-content .drop_cap {
@@ -294,6 +299,13 @@ img.alignright,
   width: 50%;
 }
 
+@media only screen and (max-width: 600px) {
+  .comment-respond input[type=email],
+.comment-respond input[type=text],
+.comment-respond input[type=url] {
+    width: 100%;
+  }
+}
 .comment-respond label {
   display: block;
   margin-right: 12px;
@@ -321,6 +333,12 @@ img.alignright,
   height: 300px;
 }
 
+@media only screen and (max-width: 600px) {
+  .comment-respond textarea#comment {
+    width: 100%;
+    height: 180px;
+  }
+}
 .comment-respond input[type=email],
 .comment-respond input[type=text],
 .comment-respond input[type=url] {
