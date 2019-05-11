@@ -157,7 +157,7 @@ img.alignright,
   float: left;
 }
 
-.entry-content .alert, .entry-content .note, .entry-content .box {
+.entry-content .alert, .entry-content .note, .entry-content .box, .entry-content pre {
   padding: 21px;
 }
 
@@ -193,7 +193,6 @@ img.alignright,
 
 .entry-content pre {
   background-color: #eeeeee;
-  padding: 21px;
   display: block;
   overflow: auto;
   clear: both;
@@ -348,6 +347,42 @@ img.alignright,
 .comment-respond input#submit {
   margin-top: 20px;
   cursor: pointer;
+}
+
+/* ## Table of contents
+--------------------------------------------- */
+div#ez-toc-container {
+  padding: 21px;
+  background-color: #f4f4f4;
+  width: 500px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  float: right;
+  margin-right: -300px;
+  margin-left: 21px;
+  border: 21px solid #fff;
+}
+
+@media only screen and (max-width: 600px) {
+  div#ez-toc-container {
+    width: 100%;
+    float: none;
+    margin-left: 0;
+    margin-right: 0;
+    border: none;
+  }
+}
+.ez-toc-title-container {
+  font-weight: bold;
+}
+
+p.ez-toc-title {
+  margin: 0;
+}
+
+ul.ez-toc-list {
+  list-style: none;
+  padding-left: 21px;
 }
 
 /*# sourceMappingURL=style.css.map */

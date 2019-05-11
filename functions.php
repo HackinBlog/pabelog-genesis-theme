@@ -55,6 +55,8 @@ function pabelog_deregister_scripts()
   wp_deregister_script('wp-embed');
   wp_deregister_script('jquery');
   wp_deregister_style('wp-block-library');
+  wp_dequeue_style('ez-icomoon');
+  wp_dequeue_style('ez-toc');
 }
 add_action('wp_enqueue_scripts', 'pabelog_deregister_scripts');
 

@@ -60,6 +60,7 @@ $font-color-link: $font-color3;
 $bg-color1: #fff;
 $bg-color2: #111;
 $bg-color3: #999;
+$bg-near-white: #f4f4f4;
 $border-color1: #eee;
 $border-color2: #ddd;
 
@@ -209,7 +210,7 @@ img.alignright,
 	float: left;
 } 
 
-.entry-content .alert, .entry-content .note, .entry-content .box {
+.entry-content .alert, .entry-content .note, .entry-content .box, .entry-content pre {
 	padding: $note-box-alert-padding;
 }
 
@@ -244,7 +245,6 @@ img.alignright,
 
 .entry-content pre {
 	background-color: #eeeeee;
-	padding: 21px;
 	display: block;
 	overflow: auto;
 	clear: both;
@@ -404,4 +404,42 @@ img.alignright,
 .comment-respond input#submit {
 	margin-top: 20px;
 	cursor: pointer;
+}
+
+/* ## Table of contents
+--------------------------------------------- */
+
+div#ez-toc-container {
+	padding: $note-box-alert-padding;
+	background-color: #f4f4f4;
+	width: 500px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	float: right;
+	margin-right: -300px;
+	margin-left: $note-box-alert-padding;
+	border: $note-box-alert-padding solid #fff;
+}
+
+@media only screen and (max-width: 600px) {
+	div#ez-toc-container {
+		width: 100%;
+		float: none;
+		margin-left: 0;
+		margin-right: 0;
+		border: none;
+	}
+}
+
+.ez-toc-title-container {
+	font-weight: bold;
+}
+
+p.ez-toc-title {
+	margin: 0;
+}
+
+ul.ez-toc-list {
+	list-style: none;
+	padding-left: $note-box-alert-padding;
 }
