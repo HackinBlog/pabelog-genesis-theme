@@ -89,7 +89,7 @@ function pabelog_archive_header()
     $slug = 'Tag: ';
   }
   if (is_archive()) {
-    echo '<div class="pl4 pl0-ns pr4 pl0-ns"><div class="f2-ns f4"><h1>';
+    echo '<div class="pl4 pl0-ns pr4 pl0-ns"><div class=""><h1 class="f-subheadline-ns lh-title f1">';
     echo single_cat_title($slug, true);
     echo '</h1></div>';
 

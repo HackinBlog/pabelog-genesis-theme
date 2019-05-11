@@ -21,10 +21,10 @@
 function pabelog_attr_breadcrumb($attributes)
 {
   if (is_single()) {
-    $attributes['class'] .= ' f5 mt2 mb2 font-color2';
+    $attributes['class'] .= ' f5 mt2 mb2 font-color2 lh-copy';
     return $attributes;
   } else {
-    $attributes['class'] .= ' f5 mt2 mb2 font-color2 pl4 pl0-ns pr4 pr0-ns';
+    $attributes['class'] .= ' f5 mt2 mb2 font-color2 pl4 pl0-ns pr4 pr0-ns lh-copy';
     return $attributes;
   }
 }
