@@ -439,7 +439,18 @@ p.ez-toc-title {
 	margin: 0;
 }
 
-ul.ez-toc-list {
+#ez-toc-container ul {
 	list-style: none;
 	padding-left: $note-box-alert-padding;
+}
+
+#ez-toc-container ul li {
+	margin-left: 10px;
+	margin-bottom: 7px;
+}
+
+#ez-toc-container ul li:before {
+	content: '\02937';
+	margin-left: -27px;
+  margin-right: 10px;
 }

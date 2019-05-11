@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 Theme Name: Pabelog
 Theme URI: https://www.pabelog.com/
@@ -380,9 +381,20 @@ p.ez-toc-title {
   margin: 0;
 }
 
-ul.ez-toc-list {
+#ez-toc-container ul {
   list-style: none;
   padding-left: 21px;
+}
+
+#ez-toc-container ul li {
+  margin-left: 10px;
+  margin-bottom: 7px;
+}
+
+#ez-toc-container ul li:before {
+  content: "⤷";
+  margin-left: -27px;
+  margin-right: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
